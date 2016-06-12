@@ -16,7 +16,7 @@ defmodule PingAndLog.Mixfile do
   def application do
     [
       mod: {PingAndLog, []},
-      applications: [:logger, :cowboy, :plug]]
+      applications: [:logger, :cowboy, :plug, :httpoison]]
   end
 
   # Dependencies can be Hex packages:
@@ -30,8 +30,10 @@ defmodule PingAndLog.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
+      {:httpoison, "~> 0.8.0"},
       {:cowboy, "~> 1.0.0"},
-      {:plug, "~> 1.0"}
+      {:plug, "~> 1.0"},
+      {:env_helper, "~> 0.0.2"}
     ]
   end
 end
