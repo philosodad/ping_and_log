@@ -7,7 +7,7 @@ defmodule PingAndLog do
   def start( _type, _args ), do: start
 
   def start do
-    Cowboy.http PingAndLog, [], port: 6438
+    Cowboy.http PingAndLog, []
   end
 
   def stop do
