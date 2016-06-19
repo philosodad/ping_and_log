@@ -1,24 +1,12 @@
 defmodule PingAndLog do
-  use Plug.Router
-  alias Plug.Adapters.Cowboy
-  plug :match
-  plug :dispatch
+  use Application
 
-  def start( _type, _args ), do: start
-
-  def start do
-    Cowboy.http PingAndLog, [], port: Settings.port
-  end
-
-  def stop do
-    Cowboy.shutdown PingAndLog.HTTP
-  end
-
-  get "/ping" do
-    send_resp(conn, 200, "I say PONG")
-  end
-
-  get _ do
-    send_resp(conn, 404, "Nothin' to see here")
+  def start( _type, _args ) do
+    import Supervisor.Spec, warn: false
+    children = [
+      worker(PingAndLog.Server, [])
+    ]
+    opts = [strategy: :one_for_one, name: PingAndLog.Supervisor]
+    Supervisor.start_link(children, opts)
   end
 end
