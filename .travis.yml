@@ -1,5 +1,12 @@
 language: elixir
 elixir:
-  - 1.2.2
+- 1.2.2
 otp_release:
-  - 18.2.1
+- 18.2.1
+deploy:
+  provider: heroku
+  api_key:
+    secure: oIpYm72yoxyUhqVf3fxypNzJqZzjU1lWtSKOJKHSEjywbRXKkJyHISNTdtpahyMjBAbuNlizb5EfItZVM47dfCmeBcA7cwfhQeTXMEOsc5bf2gfkvmEn1sk43cxwc+nA2fo3/w36HuM4sMHlw48Rvl2dI1K100hOa8jbt3XHXX9wAi1HlRk2mPAPuC1JQSmZBiyFnyjT35zbmRQQBqUICf+ks/53t3QRqXVP2po2M7Md8/ylqKhRuQZpuOwMlCz+/bxrAzDGwZjAVU5T1D3tRWL7ANdnElYJrY4n0PQUktMuJ4hwoexigipefybKvyAnqEk1hnUAhb6/WcmeJCJ8GIOU0ig5tVkkCpQLnU4AL9Wgu+1+cmRHu0/dUc6bZnDD+yjufO5A2OaJ0O7gf4/wEoiZdwellv6uTAst4iPFR7r6SguiCV1yK/IR2zxF2Uz8rvla3z9zLaTLHnqRkjLslmpyqzYJ8g+qjkd3PUOiosR0+J6pr3QLLRcNODT4j5Z45nda11iS5BEqcy4C2VNa+e/ffP1EaleEiAxcotIhyL2y3DTqBl7lDl8Rs4fguNOmoyIQ/vJFrs9h8gRVW5ipVkpll9WWuP19mwRS4RXLSJUySeH9JnozBmgOpVl6nqzjexIqaYhdQErkabQaW5A913fJy7XIyTikxIffrdNtcZQ=
+  app: enigmatic-taiga-29496
+  on:
+    repo: philosodad/ping_and_log

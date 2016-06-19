@@ -13,7 +13,7 @@ defmodule PingAndLog.Server do
   end
 
   get "/ping" do
-    send_resp(conn, 200, "I say PONG")
+    send_resp(conn, 200, "pong")
   end
 
   get _ do
