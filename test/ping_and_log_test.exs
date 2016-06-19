@@ -5,6 +5,6 @@ defmodule PingAndLogTest do
   test "responds with Pong" do
     {:ok, response} = HTTPoison.get("localhost:#{Settings.port}/ping")
     assert response.status_code == 200
-    assert response.body == "I say PONG"
+    assert response.body == "pong"
   end
 end
