@@ -8,10 +8,6 @@ defmodule PingAndLog.Server do
     Cowboy.http PingAndLog.Server, [], port: Settings.port
   end
 
-  def stop do
-    Cowboy.shutdown PingAndLog.Server.HTTP
-  end
-
   get "/ping" do
     send_resp(conn, 200, "pong")
   end
